@@ -19,7 +19,7 @@ jobs:
       run: pip install requests
       
     - name: Download from yuque
-      run: python main.py
+      run: python main.py https://www.yuque.com/openvpi/tutorial
     
     - name: tree
       run: tree .
