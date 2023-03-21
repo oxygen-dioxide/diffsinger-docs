@@ -17,9 +17,12 @@ jobs:
     
     - name: install python dependencies
       run: pip install requests
-
+      
     - name: Download from yuque
-      run: python main.py
+      shell: cmd
+      run: |
+        chcp 65001
+        python main.py
     
     - name: tree
       run: tree
