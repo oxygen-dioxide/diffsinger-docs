@@ -7,7 +7,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ 'windows-latest' ]
+        os: [ 'ubuntu-latest' ]
 
     steps:
     - uses: actions/checkout@v1
@@ -16,16 +16,13 @@ jobs:
       run: git checkout main
     
     - name: install python dependencies
-      run: pip install requests win_unicode_console
+      run: pip install requests
       
     - name: Download from yuque
-      shell: cmd
-      run: |
-        chcp 65001
-        python main.py
+      run: python main.py
     
     - name: tree
-      run: tree
+      run: tree .
     
     - name: git config
       run: |
