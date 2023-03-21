@@ -11,8 +11,9 @@ import urllib.parse
 import random
 import time
 
-tset = []
+import win_unicode_console
 
+tset = []
 
 def save_page(book_id, sulg, path):
     url = 'https://www.yuque.com/api/docs/' + sulg + '?book_id=' + book_id + '&merge_dynamic_data=false&mode=markdown'
