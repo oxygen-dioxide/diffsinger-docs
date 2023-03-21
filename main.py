@@ -15,10 +15,10 @@ tset = []
 
 def save_page(book_id, sulg, path):
     url = 'https://www.yuque.com/api/docs/' + sulg + '?book_id=' + book_id + '&merge_dynamic_data=false&mode=markdown'
-    print(" ".join(["downloading", url, "to", path]).encode('utf-8'))
+    print("downloading", url, "to", path)
     docsdata = requests.get(url)
     if (docsdata.status_code != 200):
-        print(" ".join(["error downloading document. The document might be deleted", book_id, sulg, docsdata.content]).encode('utf-8'))
+        print("error downloading document. The document might be deleted", book_id, sulg, docsdata.content)
         return
     docsjson = json.loads(docsdata.content)
 
