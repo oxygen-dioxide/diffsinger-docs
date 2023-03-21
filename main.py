@@ -11,17 +11,14 @@ import urllib.parse
 import random
 import time
 
-import win_unicode_console
-win_unicode_console.enable()
-
 tset = []
 
 def save_page(book_id, sulg, path):
     url = 'https://www.yuque.com/api/docs/' + sulg + '?book_id=' + book_id + '&merge_dynamic_data=false&mode=markdown'
-    print("downloading", url, "to", path)
+    print(" ".join(["downloading", url, "to", path]).encode('utf-8'))
     docsdata = requests.get(url)
     if (docsdata.status_code != 200):
-        print("error downloading document. The document might be deleted", book_id, sulg, docsdata.content)
+        print(" ".join(["error downloading document. The document might be deleted", book_id, sulg, docsdata.content]).encode('utf-8'))
         return
     docsjson = json.loads(docsdata.content)
 
