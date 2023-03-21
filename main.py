@@ -16,10 +16,10 @@ tset = []
 
 def save_page(book_id, sulg, path):
     url = 'https://www.yuque.com/api/docs/' + sulg + '?book_id=' + book_id + '&merge_dynamic_data=false&mode=markdown'
-    print("下载",url)
+    print("downloading", url, "to", path)
     docsdata = requests.get(url)
     if (docsdata.status_code != 200):
-        print("文档下载失败 页面可能被删除 ", book_id, sulg, docsdata.content)
+        print("error downloading document. The document might be deleted", book_id, sulg, docsdata.content)
         return
     docsjson = json.loads(docsdata.content)
 
