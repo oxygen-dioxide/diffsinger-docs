@@ -12,6 +12,7 @@ import random
 import time
 
 import win_unicode_console
+win_unicode_console.enable()
 
 tset = []
 
