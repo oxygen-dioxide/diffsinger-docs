@@ -16,7 +16,7 @@ jobs:
       run: git checkout main
     
     - name: install python dependencies
-      run: pip install requests
+      run: pip install requests win_unicode_console
       
     - name: Download from yuque
       shell: cmd
